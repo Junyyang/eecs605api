@@ -98,14 +98,14 @@ function App() {
   return (
     <div className="App">
       <div className="Input">
-        <h1>Input</h1>
+        <h1>Input the calligraphy image to classify the style</h1>
         <form onSubmit={handleSubmit}>  
           <input type="file" accept=".png, .jpg, .jpeg" onChange={handleChange} />
           <button type="submit" disabled={buttonDisable}>{buttonText}</button>
         </form>
       </div>
       <div className="Output">
-        <h1>Results</h1>
+        <h1>Recognized as style:</h1>
         <p>{outputFileData}</p>
       </div>
     </div>
