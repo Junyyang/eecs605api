@@ -127,11 +127,8 @@ function App() {
 
         <div className="Input">
           <p>OR Upload from sample images:</p>
-
-
-          
           <form onSubmit={handleSubmit}>
-            {/* <select name="Sample scripts" id="samples">
+            <select name="Sample scripts" id="samples">
               <option value="./test_image/Cao/0.jpg">Select a sample script (Cursive as default)</option>
               <option value="./test_image/Cao/0.jpg">Crusive scrip 1</option>
               <option value="./test_image/Cao/1.jpg">Crusive scrip 2</option>
@@ -157,8 +154,8 @@ function App() {
               <option value="./test_image/Zhuan/7.jpg">Seal scrip 4</option>
               <option value="./test_image/Zhuan/3.jpg">Seal scrip 5</option>
             </select>
-            <input type="submit" accept=".png, .jpg, .jpeg" onChange={handleChange} />   */}
-            <input type="image" alt="Cursive Script" src="https://github.com/Junyyang/eecs605api/blob/main/src/test_image/Cao/0.jpg" onChange={handleChange}></input>
+            <input type="submit" value="Submit" />  
+            {/* <input type="image" alt="Cursive Script" src="https://github.com/Junyyang/eecs605api/blob/main/src/test_image/Cao/0.jpg" onChange={handleChange}></input> */}
           </form>
         </div>
 
@@ -166,11 +163,6 @@ function App() {
             <h1>Recognized as style:</h1>
             <p>{outputFileData}</p>
         </div>
-
-        <p>
-        <img src="https://github.com/Junyyang/eecs605api/blob/main/src/test_image/Cao/0.jpg" alt="Cursive Script" width="32" height="32"></img>
-        </p>
-
 
         <h2>Cursive Script Samples:</h2>
           <p>script 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
