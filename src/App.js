@@ -199,11 +199,11 @@ function App() {
               script 5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </p>
           <table><tr>
-              <td><img src={crusive1} alt="Cursive Script" width="200" height="300"/></td>
-              <td><img src={crusive2} alt="Cursive Script" width="200" height="300"/></td>
-              <td><img src={crusive3} alt="Cursive Script" width="200" height="300"/></td>
-              <td><img src={crusive4} alt="Cursive Script" width="200" height="300"/></td>
-              <td><img src={crusive5} alt="Cursive Script" width="200" height="300"/></td>
+              <td><img src={crusive1} alt="Cursive Script" width="250" height="300"/></td>
+              <td><img src={crusive2} alt="Cursive Script" width="250" height="300"/></td>
+              <td><img src={crusive3} alt="Cursive Script" width="250" height="300"/></td>
+              <td><img src={crusive4} alt="Cursive Script" width="250" height="300"/></td>
+              <td><img src={crusive5} alt="Cursive Script" width="250" height="300"/></td>
           </tr></table>
 
 
@@ -216,11 +216,11 @@ function App() {
               script 5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </p>
           <table><tr>
-              <td><img src={Standard1} alt="Standard Script" width="200" height="300"/></td>
-              <td><img src={Standard2} alt="Standard Script" width="200" height="300"/></td>
-              <td><img src={Standard3} alt="Standard Script" width="200" height="300"/></td>
-              <td><img src={Standard4} alt="Standard Script" width="200" height="300"/></td>
-              <td><img src={Standard5} alt="Standard Script" width="200" height="300"/></td>
+              <td><img src={Standard1} alt="Standard Script" width="250" height="300"/></td>
+              <td><img src={Standard2} alt="Standard Script" width="250" height="300"/></td>
+              <td><img src={Standard3} alt="Standard Script" width="250" height="300"/></td>
+              <td><img src={Standard4} alt="Standard Script" width="250" height="300"/></td>
+              <td><img src={Standard5} alt="Standard Script" width="250" height="300"/></td>
           </tr></table>
 
           <h2>Clerical Script Samples:</h2>
@@ -231,11 +231,11 @@ function App() {
               script 5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </p>
           <table><tr>
-              <td><img src={Clerical1} alt="Clerical Script" width="200" height="300"/></td>
-              <td><img src={Clerical2} alt="Clerical Script" width="200" height="300"/></td>
-              <td><img src={Clerical3} alt="Clerical Script" width="200" height="300"/></td>
-              <td><img src={Clerical4} alt="Clerical Script" width="200" height="300"/></td>
-              <td><img src={Clerical5} alt="Clerical Script" width="200" height="300"/></td>
+              <td><img src={Clerical1} alt="Clerical Script" width="250" height="300"/></td>
+              <td><img src={Clerical2} alt="Clerical Script" width="250" height="300"/></td>
+              <td><img src={Clerical3} alt="Clerical Script" width="250" height="300"/></td>
+              <td><img src={Clerical4} alt="Clerical Script" width="250" height="300"/></td>
+              <td><img src={Clerical5} alt="Clerical Script" width="250" height="300"/></td>
           </tr></table>
 
           <h2>Seal Script Samples:</h2>
@@ -246,11 +246,11 @@ function App() {
               script 5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </p>
           <table><tr>
-              <td><img src={Seal1} alt="Seal Script" width="200" height="300"/></td>
-              <td><img src={Seal2} alt="Seal Script" width="200" height="300"/></td>
-              <td><img src={Seal3} alt="Seal Script" width="200" height="300"/></td>
-              <td><img src={Seal4} alt="Seal Script" width="200" height="300"/></td>
-              <td><img src={Seal5} alt="Seal Script" width="200" height="300"/></td>
+              <td><img src={Seal1} alt="Seal Script" width="250" height="300"/></td>
+              <td><img src={Seal2} alt="Seal Script" width="250" height="300"/></td>
+              <td><img src={Seal3} alt="Seal Script" width="250" height="300"/></td>
+              <td><img src={Seal4} alt="Seal Script" width="250" height="300"/></td>
+              <td><img src={Seal5} alt="Seal Script" width="250" height="300"/></td>
           </tr></table>
         
       </div>
