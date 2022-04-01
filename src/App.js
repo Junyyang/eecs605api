@@ -125,6 +125,11 @@ function App() {
           </form>
         </div>
 
+
+        <img src="src/test_image/Cao/0.jpg" alt="Cursive Script" width="200" height="300"/>
+
+
+
         <div className="Input">
           <p>OR Upload from sample images:</p>
           <form onSubmit={handleSubmit}>
@@ -172,11 +177,11 @@ function App() {
               script 5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </p>
           <table><tr>
-              <td><img src="./test_image/Cao/0.jpg" alt="Cursive Script" width="200" height="300"/></td>
-              <td><img src="./test_image/Cao/1.jpg" alt="Cursive Script" width="200" height="300"/></td>
-              <td><img src="./test_image/Cao/2.jpg" alt="Cursive Script" width="200" height="300"/></td>
-              <td><img src="./test_image/Cao/7.jpg" alt="Cursive Script" width="200" height="300"/></td>
-              <td><img src="./test_image/Cao/4.jpg" alt="Cursive Script" width="200" height="300"/></td>
+              <td><img src="src/test_image/Cao/0.jpg" alt="Cursive Script" width="200" height="300"/></td>
+              <td><img src="src/test_image/Cao/1.jpg" alt="Cursive Script" width="200" height="300"/></td>
+              <td><img src="src/test_image/Cao/2.jpg" alt="Cursive Script" width="200" height="300"/></td>
+              <td><img src="src/test_image/Cao/7.jpg" alt="Cursive Script" width="200" height="300"/></td>
+              <td><img src="src/test_image/Cao/4.jpg" alt="Cursive Script" width="200" height="300"/></td>
           </tr></table>
 
 
