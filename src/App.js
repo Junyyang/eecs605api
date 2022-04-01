@@ -126,7 +126,7 @@ function App() {
         </div>
 
         <div className="Input">
-          <h1>OR Upload from sample images:</h1>
+          <h2>OR Upload from sample images:</h2>
           <form onSubmit={handleSubmit}>
             <select name="Sample scripts" id="samples">
               <option value="./test_image/Cao/0.jpg">Select a sample script (Cursive as default)</option>
@@ -154,10 +154,7 @@ function App() {
               <option value="./test_image/Zhuan/7.jpg">Seal scrip 4</option>
               <option value="./test_image/Zhuan/3.jpg">Seal scrip 5</option>
             </select>
-            <p>
-              <input type="submit" value="Submit" /> 
-              <input type="reset" value="cancel" /> 
-            </p>
+            <input type="file" accept=".png, .jpg, .jpeg" onChange={handleChange} />  
           </form>
         </div>
 
