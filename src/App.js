@@ -154,7 +154,7 @@ function App() {
               <option value="./test_image/Zhuan/7.jpg">Seal scrip 4</option>
               <option value="./test_image/Zhuan/3.jpg">Seal scrip 5</option>
             </select>
-            <input type="file" accept=".png, .jpg, .jpeg" onChange={handleChange} />  
+            <input type="submit" accept=".png, .jpg, .jpeg" onChange={handleChange} />  
           </form>
         </div>
 
@@ -162,6 +162,10 @@ function App() {
             <h1>Recognized as style:</h1>
             <p>{outputFileData}</p>
         </div>
+
+        <p>
+        <img src="./test_image/Cao/0.jpg" alt="Smiley face" width="32" height="32"></img>
+        </p>
 
 
         <h2>Cursive Script Samples:</h2>
