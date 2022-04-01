@@ -1,5 +1,7 @@
 import './App.css';
 import React, {Fragment} from 'react';
+import crusive1 from './test_image/Cao/0.jpg'
+
 
 // atob is deprecated but this function converts base64string to text string
 const decodeFileBase64 = (base64String) => {
@@ -126,11 +128,11 @@ function App() {
         </div>
 
 
-        <img src="src/test_image/Cao/0.jpg" alt="Cursive Script" width="200" height="300"/>
+        <img src={crusive1} alt="Cursive Script" width="200" height="300"/>
 
 
 
-        <div className="Input">
+        {/* <div className="Input">
           <p>OR Upload from sample images:</p>
           <form onSubmit={handleSubmit}>
             <select name="Sample scripts" id="samples">
@@ -160,16 +162,15 @@ function App() {
               <option value="./test_image/Zhuan/3.jpg">Seal scrip 5</option>
             </select>
             <input type="submit" value="Submit" />  
-            {/* <input type="image" alt="Cursive Script" src="https://github.com/Junyyang/eecs605api/blob/main/src/test_image/Cao/0.jpg" onChange={handleChange}></input> */}
           </form>
-        </div>
+        </div> */}
 
         <div className="Output">
             <h1>Recognized as style:</h1>
             <p>{outputFileData}</p>
         </div>
 
-        <h2>Cursive Script Samples:</h2>
+        {/* <h2>Cursive Script Samples:</h2>
           <p>script 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               script 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               script 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -229,7 +230,7 @@ function App() {
               <td><img src="./test_image/Zhuan/2.jpg" alt="Seal Script" width="200" height="300"/></td>
               <td><img src="./test_image/Zhuan/7.jpg" alt="Seal Script" width="200" height="300"/></td>
               <td><img src="./test_image/Zhuan/3.jpg" alt="Seal Script" width="200" height="300"/></td>
-          </tr></table>
+          </tr></table> */}
         
       </div>
     </Fragment>
