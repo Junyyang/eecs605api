@@ -158,7 +158,7 @@ function App() {
               <option value="./test_image/Zhuan/3.jpg">Seal scrip 5</option>
             </select>
             <input type="submit" accept=".png, .jpg, .jpeg" onChange={handleChange} />   */}
-            <input type="image" id="image" alt="Cursive Script" src="/test_image/Cao/0.jpg" onChange={handleChange}></input>
+            <input type="image" alt="Cursive Script" src="https://github.com/Junyyang/eecs605api/blob/main/src/test_image/Cao/0.jpg" onChange={handleChange}></input>
           </form>
         </div>
 
@@ -168,7 +168,7 @@ function App() {
         </div>
 
         <p>
-        <img src="/test_image/Cao/0.jpg" alt="Smiley face" width="32" height="32"></img>
+        <img src="https://github.com/Junyyang/eecs605api/blob/main/src/test_image/Cao/0.jpg" alt="Cursive Script" width="32" height="32"></img>
         </p>
 
 
