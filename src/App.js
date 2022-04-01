@@ -1,6 +1,30 @@
 import './App.css';
 import React, {Fragment} from 'react';
+
 import crusive1 from './test_image/Cao/0.jpg'
+import crusive2 from './test_image/Cao/1.jpg'
+import crusive3 from './test_image/Cao/2.jpg'
+import crusive4 from './test_image/Cao/7.jpg'
+import crusive5 from './test_image/Cao/4.jpg'
+
+import Standard1 from "./test_image/Kai/0.jpg"
+import Standard2 from "./test_image/Kai/1.jpg"
+import Standard3 from "./test_image/Kai/2.jpg"
+import Standard4 from "./test_image/Kai/7.jpg"
+import Standard5 from "./test_image/Kai/4.jpg"
+
+import Clerical1 from "./test_image/Li/0.jpg"
+import Clerical2 from "./test_image/Li/1.jpg"
+import Clerical3 from "./test_image/Li/3.jpg"
+import Clerical4 from "./test_image/Li/7.jpg"
+import Clerical5 from "./test_image/Li/4.jpg"
+
+import Seal1 from "./test_image/Zhuan/0.jpg"
+import Seal2 from "./test_image/Zhuan/1.jpg"
+import Seal3 from "./test_image/Zhuan/2.jpg"
+import Seal4 from "./test_image/Zhuan/7.jpg"
+import Seal5 from "./test_image/Zhuan/3.jpg"
+
 
 
 // atob is deprecated but this function converts base64string to text string
@@ -128,49 +152,49 @@ function App() {
         </div>
 
 
-        <img src={crusive1} alt="Cursive Script" width="200" height="300"/>
+        {/* <img src={crusive1} alt="Cursive Script" width="200" height="300"/> */}
 
 
 
-        {/* <div className="Input">
+        <div className="Input">
           <p>OR Upload from sample images:</p>
           <form onSubmit={handleSubmit}>
             <select name="Sample scripts" id="samples">
-              <option value="./test_image/Cao/0.jpg">Select a sample script (Cursive as default)</option>
-              <option value="./test_image/Cao/0.jpg">Crusive scrip 1</option>
-              <option value="./test_image/Cao/1.jpg">Crusive scrip 2</option>
-              <option value="./test_image/Cao/2.jpg">Crusive scrip 3</option>
-              <option value="./test_image/Cao/7.jpg">Crusive scrip 4</option>
-              <option value="./test_image/Cao/4.jpg">Crusive scrip 5</option>
+              <option value={crusive1}>Select a sample script (Cursive as default)</option>
+              <option value={crusive1}>Crusive scrip 1</option>
+              <option value={crusive2}>Crusive scrip 2</option>
+              <option value={crusive3}>Crusive scrip 3</option>
+              <option value={crusive4}>Crusive scrip 4</option>
+              <option value={crusive5}>Crusive scrip 5</option>
 
-              <option value="./test_image/Kai/0.jpg">Standard scrip 1</option>
-              <option value="./test_image/Kai/1.jpg">Standard scrip 2</option>
-              <option value="./test_image/Kai/2.jpg">Standard scrip 3</option>
-              <option value="./test_image/Kai/7.jpg">Standard scrip 4</option>
-              <option value="./test_image/Kai/4.jpg">Standard scrip 5</option>
+              <option value={Standard1}>Standard scrip 1</option>
+              <option value={Standard2}>Standard scrip 2</option>
+              <option value={Standard3}>Standard scrip 3</option>
+              <option value={Standard4}>Standard scrip 4</option>
+              <option value={Standard5}>Standard scrip 5</option>
 
-              <option value="./test_image/Li/0.jpg">Clerical scrip 1</option>
-              <option value="./test_image/Li/1.jpg">Clerical scrip 2</option>
-              <option value="./test_image/Li/3.jpg">Clerical scrip 3</option>
-              <option value="./test_image/Li/7.jpg">Clerical scrip 4</option>
-              <option value="./test_image/Li/4.jpg">Clerical scrip 5</option>
+              <option value={Clerical1}>Clerical scrip 1</option>
+              <option value={Clerical2}>Clerical scrip 2</option>
+              <option value={Clerical3}>Clerical scrip 3</option>
+              <option value={Clerical4}>Clerical scrip 4</option>
+              <option value={Clerical5}>Clerical scrip 5</option>
 
-              <option value="./test_image/Zhuan/0.jpg">Seal scrip 1</option>
-              <option value="./test_image/Zhuan/1.jpg">Seal scrip 2</option>
-              <option value="./test_image/Zhuan/2.jpg">Seal scrip 3</option>
-              <option value="./test_image/Zhuan/7.jpg">Seal scrip 4</option>
-              <option value="./test_image/Zhuan/3.jpg">Seal scrip 5</option>
+              <option value={Seal1}>Seal scrip 1</option>
+              <option value={Seal2}>Seal scrip 2</option>
+              <option value={Seal3}>Seal scrip 3</option>
+              <option value={Seal4}>Seal scrip 4</option>
+              <option value={Seal5}>Seal scrip 5</option>
             </select>
             <input type="submit" value="Submit" />  
           </form>
-        </div> */}
+        </div>
 
         <div className="Output">
             <h1>Recognized as style:</h1>
             <p>{outputFileData}</p>
         </div>
 
-        {/* <h2>Cursive Script Samples:</h2>
+        <h2>Cursive Script Samples:</h2>
           <p>script 1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               script 2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               script 3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -178,11 +202,11 @@ function App() {
               script 5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </p>
           <table><tr>
-              <td><img src="src/test_image/Cao/0.jpg" alt="Cursive Script" width="200" height="300"/></td>
-              <td><img src="src/test_image/Cao/1.jpg" alt="Cursive Script" width="200" height="300"/></td>
-              <td><img src="src/test_image/Cao/2.jpg" alt="Cursive Script" width="200" height="300"/></td>
-              <td><img src="src/test_image/Cao/7.jpg" alt="Cursive Script" width="200" height="300"/></td>
-              <td><img src="src/test_image/Cao/4.jpg" alt="Cursive Script" width="200" height="300"/></td>
+              <td><img src={crusive1} alt="Cursive Script" width="200" height="300"/></td>
+              <td><img src={crusive2} alt="Cursive Script" width="200" height="300"/></td>
+              <td><img src={crusive3} alt="Cursive Script" width="200" height="300"/></td>
+              <td><img src={crusive4} alt="Cursive Script" width="200" height="300"/></td>
+              <td><img src={crusive5} alt="Cursive Script" width="200" height="300"/></td>
           </tr></table>
 
 
@@ -195,11 +219,11 @@ function App() {
               script 5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </p>
           <table><tr>
-              <td><img src="./test_image/Kai/0.jpg" alt="Standard Script" width="200" height="300"/></td>
-              <td><img src="./test_image/Kai/1.jpg" alt="Standard Script" width="200" height="300"/></td>
-              <td><img src="./test_image/Kai/2.jpg" alt="Standard Script" width="200" height="300"/></td>
-              <td><img src="./test_image/Kai/7.jpg" alt="Standard Script" width="200" height="300"/></td>
-              <td><img src="./test_image/Kai/4.jpg" alt="Standard Script" width="200" height="300"/></td>
+              <td><img src={Standard1} alt="Standard Script" width="200" height="300"/></td>
+              <td><img src={Standard2} alt="Standard Script" width="200" height="300"/></td>
+              <td><img src={Standard3} alt="Standard Script" width="200" height="300"/></td>
+              <td><img src={Standard4} alt="Standard Script" width="200" height="300"/></td>
+              <td><img src={Standard5} alt="Standard Script" width="200" height="300"/></td>
           </tr></table>
 
           <h2>Clerical Script Samples:</h2>
@@ -210,11 +234,11 @@ function App() {
               script 5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </p>
           <table><tr>
-              <td><img src="./test_image/Li/0.jpg" alt="Clerical Script" width="200" height="300"/></td>
-              <td><img src="./test_image/Li/1.jpg" alt="Clerical Script" width="200" height="300"/></td>
-              <td><img src="./test_image/Li/3.jpg" alt="Clerical Script" width="200" height="300"/></td>
-              <td><img src="./test_image/Li/7.jpg" alt="Clerical Script" width="200" height="300"/></td>
-              <td><img src="./test_image/Li/4.jpg" alt="Clerical Script" width="200" height="300"/></td>
+              <td><img src={Clerical1} alt="Clerical Script" width="200" height="300"/></td>
+              <td><img src={Clerical2} alt="Clerical Script" width="200" height="300"/></td>
+              <td><img src={Clerical3} alt="Clerical Script" width="200" height="300"/></td>
+              <td><img src={Clerical4} alt="Clerical Script" width="200" height="300"/></td>
+              <td><img src={Clerical5} alt="Clerical Script" width="200" height="300"/></td>
           </tr></table>
 
           <h2>Seal Script Samples:</h2>
@@ -225,12 +249,12 @@ function App() {
               script 5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           </p>
           <table><tr>
-              <td><img src="./test_image/Zhuan/0.jpg" alt="Seal Script" width="200" height="300"/></td>
-              <td><img src="./test_image/Zhuan/1.jpg" alt="Seal Script" width="200" height="300"/></td>
-              <td><img src="./test_image/Zhuan/2.jpg" alt="Seal Script" width="200" height="300"/></td>
-              <td><img src="./test_image/Zhuan/7.jpg" alt="Seal Script" width="200" height="300"/></td>
-              <td><img src="./test_image/Zhuan/3.jpg" alt="Seal Script" width="200" height="300"/></td>
-          </tr></table> */}
+              <td><img src={Seal1} alt="Seal Script" width="200" height="300"/></td>
+              <td><img src={Seal2} alt="Seal Script" width="200" height="300"/></td>
+              <td><img src={Seal3} alt="Seal Script" width="200" height="300"/></td>
+              <td><img src={Seal4} alt="Seal Script" width="200" height="300"/></td>
+              <td><img src={Seal5} alt="Seal Script" width="200" height="300"/></td>
+          </tr></table>
         
       </div>
     </Fragment>
