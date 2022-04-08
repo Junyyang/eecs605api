@@ -1,6 +1,10 @@
 import './App.css';
 import React, {Fragment} from 'react';
 
+// global variables to change where necessary
+const DROPDOWN_API_ENDPOINT = 'https://ag72i68dq5.execute-api.us-east-1.amazonaws.com/prod'; // TODO The demo files GET/POST REST API
+const ML_API_ENDPOINT = 'https://zhc7viossk.execute-api.us-east-1.amazonaws.com/prod'; // TODO The handwritten digit inference POST REST API 
+
 import crusive1 from './test_image/Cao/0.jpg'
 import crusive2 from './test_image/Cao/1.jpg'
 import crusive3 from './test_image/Cao/2.jpg'
@@ -44,6 +48,30 @@ function App() {
   const [buttonDisable, setButtonDisable] = React.useState(true);
   const [buttonText, setButtonText] = React.useState('Submit');
 
+  const [inputImage, setInputImage] = React.useState(''); // represented as bytes data (string)
+  const [submitButtonText, setSubmitButtonText] = React.useState('Submit');
+  const [fileButtonText, setFileButtonText] = React.useState('Upload File');
+  const [demoDropdownFiles, setDemoDropdownFiles] = React.useState([]);
+  const [selectedDropdownFile, setSelectedDropdownFile] = React.useState('');
+
+  // make GET request to get demo files on load -- takes a second to load
+  React.useEffect(() => {
+    fetch(DROPDOWN_API_ENDPOINT)
+    .then(response => response.json())
+    .then(data => {
+      // GET request error
+      if (data.statusCode === 400) {
+        console.log('Sorry! There was an error, the demo files are currently unavailable.')
+      }
+
+      // GET request success
+      else {
+        const s3BucketFiles = JSON.parse(data.body);
+        setDemoDropdownFiles(s3BucketFiles["s3Files"]);
+      }
+    });
+  }, [])
+
   // convert file to bytes data
   const convertFileToBytes = (inputFile) => {
     console.log('converting file to bytes...');
@@ -70,8 +98,11 @@ function App() {
     const inputFile = event.target.files[0];
     console.log(inputFile);
 
+    setFileButtonText(inputFile.name);
+
     // convert file to bytes data
     const base64Data = await convertFileToBytes(inputFile);
+    setInputImage(base64Data);
     const base64DataArray = base64Data.split('base64,'); // need to get rid of 'data:image/png;base64,' at the beginning of encoded string
     const encodedString = base64DataArray[1];
     setInputFileData(encodedString);
@@ -79,6 +110,9 @@ function App() {
 
     // enable submit button
     setButtonDisable(false);
+
+    // reset demo dropdown selection
+    setSelectedDropdownFile('');
   }
 
   // handle file submission
@@ -91,7 +125,7 @@ function App() {
 
     // make POST request
     console.log('making POST request...');
-    fetch('https://7kbhaxle1l.execute-api.us-west-2.amazonaws.com/prod', {
+    fetch(ML_API_ENDPOINT, {
       method: 'POST',
       headers: { "Content-Type": "application/json", "Accept": "text/plain" },
       body: JSON.stringify({ "image": inputFileData })
@@ -119,6 +153,43 @@ function App() {
     .then(() => {
       console.log('POST request success');
     })
+  }
+
+  // handle demo dropdown file selection
+  const handleDropdown = (event) => {
+    setSelectedDropdownFile(event.target.value);
+
+    // temporarily disable submit button
+    setButtonDisable(true);
+    setSubmitButtonText('Loading Demo File...');
+
+    // only make POST request on file selection
+    if (event.target.value) {
+      fetch(DROPDOWN_API_ENDPOINT, {
+        method: 'POST',
+        body: JSON.stringify({ "fileName": event.target.value })
+      }).then(response => response.json())
+      .then(data => {
+
+        // POST request error
+        if (data.statusCode === 400) {
+          console.log('Uh oh! There was an error retrieving the dropdown file from the S3 bucket.')
+        }
+
+        // POST request success
+        else {
+          const dropdownFileBytesData = JSON.parse(data.body)['bytesData'];
+          setInputFileData(dropdownFileBytesData);
+          setInputImage('data:image/png;base64,' + dropdownFileBytesData); // hacky way of setting image from bytes data - even works on .jpeg lol
+          setSubmitButtonText('Submit');
+          setButtonDisable(false);
+        }
+      });
+    }
+
+    else {
+      setInputFileData('');
+    }
   }
 
   // return (
@@ -149,11 +220,20 @@ function App() {
               <input type="file" accept=".png, .jpg, .jpeg" onChange={handleChange} />  
               <button type="submit" disabled={buttonDisable}>{buttonText}</button>
           </form>
+
+          <p>OR upload from sample images:</p>
+          <label htmlFor="demo-dropdown">Demo: </label>
+          <select name="Select Image" id="demo-dropdown" value={selectedDropdownFile} onChange={handleDropdown}>
+              <option value="">-- Select Demo File --</option>
+              {demoDropdownFiles.map((file) => <option key={file} value={file}>{file}</option>)}
+          </select>
+
+
         </div>
 
 
 
-        <div className="Input">
+        {/* <div className="Input">
           <p>OR upload from sample images:</p>
           <form onSubmit={handleSubmit}>
             <select name="Sample scripts" id="samples">
@@ -184,7 +264,7 @@ function App() {
             </select>
             <input type="submit" value="Submit" />  
           </form>
-        </div>
+        </div> */}
 
         <div className="Output">
             <h1>Recognized as style:</h1>
