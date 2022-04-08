@@ -1,10 +1,6 @@
 import './App.css';
 import React, {Fragment} from 'react';
 
-// global variables to change where necessary
-const DROPDOWN_API_ENDPOINT = 'https://ag72i68dq5.execute-api.us-east-1.amazonaws.com/prod'; // TODO The demo files GET/POST REST API
-const ML_API_ENDPOINT = 'https://zhc7viossk.execute-api.us-east-1.amazonaws.com/prod'; // TODO The handwritten digit inference POST REST API 
-
 import crusive1 from './test_image/Cao/0.jpg'
 import crusive2 from './test_image/Cao/1.jpg'
 import crusive3 from './test_image/Cao/2.jpg'
@@ -29,6 +25,9 @@ import Seal3 from "./test_image/Zhuan/2.jpg"
 import Seal4 from "./test_image/Zhuan/7.jpg"
 import Seal5 from "./test_image/Zhuan/3.jpg"
 
+// global variables to change where necessary
+const DROPDOWN_API_ENDPOINT = 'https://ag72i68dq5.execute-api.us-east-1.amazonaws.com/prod'; // TODO The demo files GET/POST REST API
+const ML_API_ENDPOINT = 'https://zhc7viossk.execute-api.us-east-1.amazonaws.com/prod'; // TODO The handwritten digit inference POST REST API 
 
 
 // atob is deprecated but this function converts base64string to text string
