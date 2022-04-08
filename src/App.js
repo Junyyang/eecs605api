@@ -44,10 +44,9 @@ const decodeFileBase64 = (base64String) => {
 function App() {
   const [inputFileData, setInputFileData] = React.useState(''); // represented as bytes data (string)
   const [outputFileData, setOutputFileData] = React.useState(''); // represented as readable data (text string)
-  const [buttonDisable, setButtonDisable] = React.useState(true);
-  const [buttonText, setButtonText] = React.useState('Submit');
-
   const [inputImage, setInputImage] = React.useState(''); // represented as bytes data (string)
+  const [buttonDisable, setButtonDisable] = React.useState(true);
+  
   const [submitButtonText, setSubmitButtonText] = React.useState('Submit');
   const [fileButtonText, setFileButtonText] = React.useState('Upload File');
   const [demoDropdownFiles, setDemoDropdownFiles] = React.useState([]);
@@ -90,9 +89,6 @@ function App() {
 
   // handle file input
   const handleChange = async (event) => {
-    // Clear output text.
-    setOutputFileData("");
-
     console.log('newly uploaded file');
     const inputFile = event.target.files[0];
     console.log(inputFile);
@@ -110,6 +106,9 @@ function App() {
     // enable submit button
     setButtonDisable(false);
 
+    // clear response results
+    setOutputFileData('');
+
     // reset demo dropdown selection
     setSelectedDropdownFile('');
   }
@@ -120,7 +119,7 @@ function App() {
 
     // temporarily disable submit button
     setButtonDisable(true);
-    setButtonText('Loading Result');
+    submitButtonText('Loading Result');
 
     // make POST request
     console.log('making POST request...');
@@ -147,7 +146,7 @@ function App() {
 
       // re-enable submit button
       setButtonDisable(false);
-      setButtonText('Submit');
+      setSubmitButtonText('Submit');
     })
     .then(() => {
       console.log('POST request success');
@@ -191,41 +190,30 @@ function App() {
     }
   }
 
-  // return (
-  //   <div className="App">
-  //     <div className="Input">
-  //       <h1>Input the calligraphy image to classify the style</h1>
-  //       <form onSubmit={handleSubmit}>  
-  //         <input type="file" accept=".png, .jpg, .jpeg" onChange={handleChange} />
-  //         <button type="submit" disabled={buttonDisable}>{buttonText}</button>
-  //       </form>
-  //     </div>
 
-  //     <div className="Output">
-  //       <h1>Recognized as style:</h1>
-  //       <p>{outputFileData}</p>
-  //     </div>
-      
-  //   </div>
-  // );
   return (
     <Fragment>
       <div className="App">
         
         <div className="Input">
           <h1>Input the calligraphy image to classify the style</h1>
-          <p>upload the image by your own:</p>
-          <form onSubmit={handleSubmit}>  
-              <input type="file" accept=".png, .jpg, .jpeg" onChange={handleChange} />  
-              <button type="submit" disabled={buttonDisable}>{buttonText}</button>
-          </form>
 
-          <p>OR upload from sample images:</p>
+
+          <p>Upload from sample images:</p>
           <label htmlFor="demo-dropdown">Demo: </label>
           <select name="Select Image" id="demo-dropdown" value={selectedDropdownFile} onChange={handleDropdown}>
               <option value="">-- Select Demo File --</option>
               {demoDropdownFiles.map((file) => <option key={file} value={file}>{file}</option>)}
           </select>
+
+          <p>OR upload the image by your own:</p>
+          <form onSubmit={handleSubmit}>  
+              <label htmlFor="file-upload">{fileButtonText}</label>
+              <input type="file" accept=".png, .jpg, .jpeg" onChange={handleChange} />  
+              <button type="submit" disabled={buttonDisable}>{submitButtonText}</button>
+          </form>
+
+          <img src={inputImage} alt="" />
 
 
         </div>
